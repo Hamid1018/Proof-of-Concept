@@ -31,6 +31,9 @@ export default function DashboardPage() {
 
   const isAdmin = user.role === "ADMIN";
 
+  const cardClass =
+    "block rounded-xl bg-white p-6 shadow-sm transition duration-200 hover:-translate-y-1 hover:shadow-lg cursor-pointer";
+
   return (
     <main className="min-h-screen bg-slate-100">
       <nav className="flex items-center justify-between bg-white px-6 py-4 shadow-sm">
@@ -69,34 +72,23 @@ export default function DashboardPage() {
             </h3>
 
             <div className="grid gap-6 md:grid-cols-2">
-              <div className="rounded-xl bg-white p-6 shadow-sm">
-                <Link
-  href="/admin/contests"
-  className="block rounded-xl bg-white p-6 shadow-sm transition hover:shadow-md"
->
+              <Link href="/admin/contests" className={cardClass}>
                 <h4 className="text-lg font-semibold">
                   Contest Management
                 </h4>
                 <p className="mt-2 text-sm text-slate-600">
                   Create, update, publish, and manage contests.
                 </p>
-                </Link>
-              </div>
+              </Link>
 
-              <div className="rounded-xl bg-white p-6 shadow-sm">
+              <Link href="/admin/quizzes" className={cardClass}>
                 <h4 className="text-lg font-semibold">
-
-                    <Link
-  href="/admin/quizzes"
-  className="rounded-lg border p-4 hover:bg-gray-50"
->
                   Quiz Management
-                  </Link>
                 </h4>
                 <p className="mt-2 text-sm text-slate-600">
                   Manage contest questions and options.
                 </p>
-              </div>
+              </Link>
 
               <div className="rounded-xl bg-white p-6 shadow-sm">
                 <h4 className="text-lg font-semibold">
@@ -112,7 +104,7 @@ export default function DashboardPage() {
                   Quiz Submissions
                 </h4>
                 <p className="mt-2 text-sm text-slate-600">
-                 Review participants&apos; quiz submissions and scores.
+                  Review participants&apos; quiz submissions and scores.
                 </p>
               </div>
             </div>
@@ -124,41 +116,53 @@ export default function DashboardPage() {
             </h3>
 
             <div className="grid gap-6 md:grid-cols-2">
-              <div className="rounded-xl bg-white p-6 shadow-sm">
-                <h4 className="text-lg font-semibold">
+              <Link href="/contests" className={cardClass}>
+                <h4 className="text-lg font-semibold text-slate-900">
                   Available Contests
                 </h4>
                 <p className="mt-2 text-sm text-slate-600">
                   Explore published programming contests and participate.
                 </p>
-              </div>
+                <p className="mt-4 text-sm font-semibold text-blue-600">
+                  View Contests →
+                </p>
+              </Link>
 
-              <div className="rounded-xl bg-white p-6 shadow-sm">
-                <h4 className="text-lg font-semibold">
+              <Link href="/my-contests" className={cardClass}>
+                <h4 className="text-lg font-semibold text-slate-900">
                   My Registrations
                 </h4>
                 <p className="mt-2 text-sm text-slate-600">
                   View the contests you have registered for.
                 </p>
-              </div>
+                <p className="mt-4 text-sm font-semibold text-blue-600">
+                  View Registrations →
+                </p>
+              </Link>
 
-              <div className="rounded-xl bg-white p-6 shadow-sm">
-                <h4 className="text-lg font-semibold">
+              <Link href="/submissions" className={cardClass}>
+                <h4 className="text-lg font-semibold text-slate-900">
                   My Submissions
                 </h4>
                 <p className="mt-2 text-sm text-slate-600">
                   View your quiz submissions and scores.
                 </p>
-              </div>
+                <p className="mt-4 text-sm font-semibold text-blue-600">
+                  View Submissions →
+                </p>
+              </Link>
 
-              <div className="rounded-xl bg-white p-6 shadow-sm">
-                <h4 className="text-lg font-semibold">
+              <Link href="/profile" className={cardClass}>
+                <h4 className="text-lg font-semibold text-slate-900">
                   My Profile
                 </h4>
                 <p className="mt-2 text-sm text-slate-600">
                   View your account information.
                 </p>
-              </div>
+                <p className="mt-4 text-sm font-semibold text-blue-600">
+                  View Profile →
+                </p>
+              </Link>
             </div>
           </section>
         )}
